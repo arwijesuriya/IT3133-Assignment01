@@ -1,10 +1,7 @@
-export default function Title({description}){
-
-
+export default function Title({ description }) {
     return (
-
-
-    <p>{description}</p>
-
-    )
+        <p>
+            {description}
+        </p>
+    );
 }

@@ -8,9 +8,11 @@ function Nightmood() {
   const handleToggle = () => {
     setDarkTheme(!darkTheme);
   };
+
   if (darkTheme) {
     document.body.classList.add("dark-theme");
-  } else {
+  } 
+  else {
     document.body.classList.remove("dark-theme");
   }
 

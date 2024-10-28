@@ -13,71 +13,63 @@ import Buttons from './components/Buttons';
 import Nightmood from './components/Nightmood';
 
 function App() {
-    const [index, setindex] = useState(0)
-
-   
     
-
-    function nextelemet(){
-       if (index === sculptureList.length - 1) {
-        setindex(0);
-       } else {
-        setindex(index + 1);
-       }
-
+  const [index, setindex] = useState(0)
+  
+  // next element
+  function nextelemet() {
+    if (index === sculptureList.length - 1) {
+      setindex(0);
+    } 
+    else {
+      setindex(index + 1);
     }
+  }
 
-    function Previouse(){
-      if (index < 1) {
-       setindex(sculptureList.length - 1);
-      } else {
-       setindex(index - 1);
-      }
+  // previous element
+  function Previouse() {
+    if (index < 1) {
+      setindex(sculptureList.length - 1);
+    } 
+    else {
+      setindex(index - 1);
+    }
+  }
 
-   }
+  // first element
+  function first() {
+    setindex(0);
+  }
 
-   function first(){
-   setindex(0);
-
- }
-
- function last(){
-   setindex(sculptureList.length - 1);
-
- }
+  // last element
+  function last() {
+    setindex(sculptureList.length - 1);
+  }
 
   return (
-   <Container>
+    <Container>
       <Row>
-       <Title title = {sculptureList[index].name}></Title>
+        <Title title = {sculptureList[index].name}></Title>
 
       </Row>
       <Row>
-      <Col>
+        <Col>
           <Image image = {sculptureList[index].url}></Image>
-      </Col>
-      <Col>
+        </Col>
+        <Col>
           <Artist artist={sculptureList[index].artist}></Artist>
           <Description description={sculptureList[index].description}></Description>
-      </Col>
-      <Col>
-           <Nightmood></Nightmood>
-      </Col>
-
+        </Col>
       </Row>
       <Row>
-         <Buttons next={nextelemet} 
-         pre={Previouse} 
-         first={first} 
-         last={last}></Buttons>
-        
-     </Row>
-
-
-
-   </Container>
-
-
+        <Buttons 
+          next={nextelemet} 
+          pre={Previouse} 
+          first={first} 
+          last={last}>
+        </Buttons>
+      </Row>
+    </Container>
   );
 }
 

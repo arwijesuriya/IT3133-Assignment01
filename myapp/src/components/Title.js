@@ -1,10 +1,5 @@
-export default function Title({title}){
-
-
+export default function Title({ title }) {
     return (
-
-
-    <h1>{title}</h1>
-
-    )
+        <h1>{title}</h1>
+    );
 }
